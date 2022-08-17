@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar{
+    width: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #000;
+    border-radius: 3px;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Figtree', sans-serif;
+    background: linear-gradient(90deg, #0000ff, #4a28ea, #633ed5, #7250c0, #7a61ab);
+    background-size: 400% 400%;
+    animation: backgroundTransition 8s ease-in-out infinite;
+}
+
+@keyframes backgroundTransition{
+    0%{
+        background-position: 0% 80%;
+    }
+
+    50%{
+        background-position: 80% 100%;
+    }
+
+    100%{
+        background-position: 0% 90%;
+    }
+}
+
+h1{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 40rem;
+    width: 45rem;
+    border: 1px solid #fff;
+    margin-bottom: 4rem;
+}
+
+input{
+    font-size: 1.8rem;
+    padding: .8rem;
+    height: 3.5rem;
+    width: 90%;
+    border-radius: 1rem;
+}
+
+button{
+    height: 4rem;
+    width: 10rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: #1197cc;
+    box-shadow: #094c66 .4rem .4rem 0;
+    border-radius: .8rem;
+    transition: transform 200ms, box-shadow 200ms;
+    cursor: pointer;
+}
+
+button:active{
+    transform: translateY(.4rem) translateX(.4rem);
+    box-shadow: #094c66 0 0 0;
+}
+
+a{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+a:nth-child(2){
+    color: #f11e1e;
+}
+
+.error{
+    color: #f11e1e;
+}
+
+table{
+    width: 90%;
+    margin: 0 auto;
+}
+
+table, th, td{
+	padding: .8rem;
+	border: 1px solid #fff;
+    border-collapse: collapse;
+	font-size: 1.4rem;
+	font-weight: 500;
+    color: #fff;
+	text-align: center;
+}
+
+p{
+    padding: 20px;
+    border: 1px solid #eee;
+}
+
+.hidden{
+    display: none;
+}
