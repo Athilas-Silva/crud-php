@@ -2,10 +2,10 @@
         // Inserindo dados
         if(isset($_POST['save']) && isset($_POST['nome']) && isset($_POST['idade']) && isset($_POST['telefone']) && isset($_POST['email'])){
 
-            $nome = limpaPost($_POST['nome']);
-            $idade = limpaPost($_POST['idade']);
-            $telefone = limpaPost($_POST['telefone']);
-            $email = limpaPost($_POST['email']);
+            $nome = clearPost($_POST['nome']);
+            $idade = clearPost($_POST['idade']);
+            $telefone = clearPost($_POST['telefone']);
+            $email = clearPost($_POST['email']);
             
             // Validação de campo vazio
             if($nome == "" || $nome == null){
@@ -34,7 +34,7 @@
             $sql = $pdo->prepare("INSERT INTO clientes VALUES (null, ?, ?, ?, ?)");
             $sql->execute(array($nome, $idade, $telefone, $email));
 
-            echo "<strong class='error'>Cliente inserido com sucesso</strong>";
+            echo "<p class='success'>Cliente inserido com sucesso</p>";
         }
     ?>
 
@@ -75,7 +75,7 @@
             $update = $pdo->prepare("UPDATE clientes SET nome = ?, idade = ?, telefone = ?, email = ? WHERE id = ?");
             $update->execute(array($nome, $idade, $telefone, $email, $id));
 
-            echo "Atualizado ".$update->rowCount()." registros!";
+            echo "<p class='success'>Atualizado ".$update->rowCount()." registros!</p>";
         }
     ?>
 
@@ -92,7 +92,7 @@
             $deletar = $pdo->prepare("DELETE FROM clientes WHERE id = ? AND nome = ? AND idade = ? AND telefone = ? AND email = ?");
             $deletar->execute(array($id, $nome, $idade, $telefone, $email));
 
-            echo "Deletado com sucesso";
+            echo "<p class='success'>Deletado com sucesso</p>";
         }
     ?>
 
@@ -132,6 +132,6 @@
             echo "</table>";
         }
         else{
-            echo "<p>Nenhum cliente cadastrado</p>";
+            echo "<p class='warning'>Nenhum cliente cadastrado</p>";
         }
     ?>
